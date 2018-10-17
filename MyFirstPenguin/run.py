@@ -70,6 +70,9 @@ def moveTowardsBottomLeft(body):
 def chooseAction(body):
     action = moveTowardsCenterOfMap(body)
 
+    if body["you"]["x"] == math.floor(body["mapWidth"] / 2) and body["you"]["y"] == math.floor(body["mapHeight"] / 2):
+        action = moveTowardsBottomLeft(body)
+
     for enemy in body["enemies"]:
         if "x" in enemy.keys():
             action = moveTowardsPoint(body, enemy["x"], enemy["y"])
