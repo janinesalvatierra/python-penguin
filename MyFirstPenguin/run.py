@@ -72,8 +72,8 @@ def chooseAction(body):
     for enemy in body["enemies"]:
         if "x" in enemy.keys():
             action = moveTowardsPoint(body, enemy["x"], enemy["y"])
-            
-            if enemy["x"] <= body["you"]["weaponRange"] and enemy["y"] <= body["you"]["weaponRange"]:
+
+            if (body["you"]["x"]-enemy["x"]) <= body["you"]["weaponRange"]:
                 action = SHOOT
     return action
 
