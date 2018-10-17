@@ -68,14 +68,10 @@ def moveTowardsBottomLeft(body):
 
 def chooseAction(body):
     action = moveTowardsBottomLeft(body)
-    if checkEmeny(body):
+    if len(body["enemies"]) > 1:
         action = SHOOT
     return action
 
-def checkEmeny(body):
-    if len(body["enemies"]) > 1:
-        return True
-    return False
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
