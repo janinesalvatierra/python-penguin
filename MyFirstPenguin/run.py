@@ -21,6 +21,7 @@ def doesCellContainWall(walls, x, y):
             return True
     return False
 
+
 def wallInFrontOfPenguin(body):
     xValueToCheckForWall = body["you"]["x"]
     yValueToCheckForWall = body["you"]["y"]
@@ -73,7 +74,7 @@ def chooseAction(body):
         if "x" in enemy.keys():
             action = moveTowardsPoint(body, enemy["x"], enemy["y"])
 
-            if (body["you"]["x"]-enemy["x"]) <= body["you"]["weaponRange"]:
+            if enemy["weaponRange"] <= body["you"]["weaponRange"]:
                 action = SHOOT
     return action
 
