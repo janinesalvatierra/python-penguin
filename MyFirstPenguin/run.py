@@ -72,7 +72,7 @@ def chooseAction(body):
     for enemy in body["enemies"]:
         if "x" in enemy.keys():
             action = moveTowardsPoint(body, enemy["x"], enemy["y"])
-            if enemy["direction"] == body["you"]["direction"]:
+            if enemy["x"] <= body["you"]["weaponRange"] or enemy["y"] <= body["you"]["weaponRange"]:
                 action = SHOOT
     return action
 
@@ -84,7 +84,7 @@ responseBody = open(env['res'], 'w')
 response = {}
 returnObject = {}
 if req_params_query == "info":
-    returnObject["name"] = "Janine"
+    returnObject["name"] = "jasa"
     returnObject["team"] = "Team Python"
 elif req_params_query == "command":
     body = json.loads(open(env["req"], "r").read())
