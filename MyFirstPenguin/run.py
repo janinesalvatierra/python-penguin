@@ -67,11 +67,17 @@ def moveTowardsBottomLeft(body):
 
 
 def chooseAction(body):
-    action = PASS
+    action = checkEnemy(body)
+    if checkEnemy(body):
+        action = "shoot"
     action = moveTowardsBottomLeft(body)
-    if wallInFrontOfPenguin(body):
-        plannedAction = moveTowardsCenterOfMap(body)
     return action
+
+def checkEmeny(body):
+    for enemy in body["enemies"]:
+        if len(body["enemies"]>1):
+            return True
+        return False
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
