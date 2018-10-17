@@ -72,7 +72,7 @@ responseBody = open(env['res'], 'w')
 response = {}
 returnObject = {}
 if req_params_query == "info":
-    returnObject["name"] = "Janine"
+    returnObject["name"] = "JaninE"
     returnObject["team"] = "Team Python"
 elif req_params_query == "command":
     body = json.loads(open(env["req"], "r").read())
