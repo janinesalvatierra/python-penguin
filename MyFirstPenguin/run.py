@@ -67,13 +67,11 @@ def moveTowardsBottomLeft(body):
 
 
 def chooseAction(body):
-    action = moveTowardsBottomLeft(body)
+    action = moveTowardsCenterOfMap(body)
 
     for enemy in body["enemies"]:
         if "x" in enemy.keys():
-            enemyX = enemy["x"]
-            enemyY = enemy["y"]
-            moveTowardsPoint(body, enemyX, enemyY)
+            moveTowardsPoint(body, enemy["x"], enemy["y"])
             action = SHOOT
     return action
 
