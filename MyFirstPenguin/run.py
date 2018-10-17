@@ -71,7 +71,7 @@ def chooseAction(body):
     #action = checkEnemy(body)
     #if checkEmeny(body):
     #    action = "shoot"
-    action = moveTowardsCenterOfMap(body)
+    action = moveTowardsBottomLeft(body)
     return action
 
 def checkEmeny(body):
