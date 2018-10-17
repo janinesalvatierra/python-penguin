@@ -67,7 +67,7 @@ def moveTowardsBottomLeft(body):
 
 
 def chooseAction(body):
-    while checkEmeny == False:
+    while not checkEmeny(body):
         action = moveTowardsBottomLeft(body)
         action = moveTowardsPoint(body, mapWidth)
         if checkEmeny(body):
