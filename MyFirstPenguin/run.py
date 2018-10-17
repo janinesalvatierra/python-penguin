@@ -71,8 +71,11 @@ def chooseAction(body):
 
     for enemy in body["enemies"]:
         if "x" in enemy.keys():
-            moveTowardsPoint(body, enemy["x"], enemy["y"])
-            action = SHOOT
+            if enemy["direction"] == body["you"]["direction"]:
+                action = SHOOT
+            else:
+                if enemy["x"] > 0:
+                    action = MOVE_UP
     return action
 
 
