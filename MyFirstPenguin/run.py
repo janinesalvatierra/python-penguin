@@ -62,7 +62,7 @@ def moveTowardsCenterOfMap(body):
 
 def moveTowardsBottomLeft(body):
     pointXzero = math.floor(0)
-    edgeOfy = math.floor(body["mapHeight"])
+    edgeOfy = math.floor(body["mapHeight"]-1)
     return moveTowardsPoint(body, pointXzero, edgeOfy)
 
 
