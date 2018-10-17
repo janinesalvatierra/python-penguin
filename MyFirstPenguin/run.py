@@ -74,8 +74,9 @@ def chooseAction(body):
         if "x" in enemy.keys():
             action = moveTowardsPoint(body, enemy["x"], enemy["y"])
 
-            if enemy["weaponRange"] <= body["you"]["weaponRange"]:
-                action = SHOOT
+            if enemy["weaponRange"] > body["you"]["weaponRange"]:
+                action = moveTowardsBottomLeft(body)
+
     return action
 
 
