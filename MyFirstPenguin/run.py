@@ -57,7 +57,7 @@ def moveTowardsPoint(body, pointX, pointY):
 
 def moveTowardsCenterOfMap(body):
     centerPointX = math.floor(body["mapWidth"] / 2)
-    centerPointY = math.floor((body["mapHeight"] / 2)-1)
+    centerPointY = math.floor((body["mapHeight"] / 2))
     return moveTowardsPoint(body, centerPointX, centerPointY)
 
 def moveTowardsBottomLeft(body):
@@ -69,6 +69,8 @@ def moveTowardsBottomLeft(body):
 def chooseAction(body):
     action = PASS
     action = moveTowardsBottomLeft(body)
+    if wallInFrontOfPenguin(body):
+        plannedAction = moveTowardsCenterOfMap(body)
     return action
 
 env = os.environ
