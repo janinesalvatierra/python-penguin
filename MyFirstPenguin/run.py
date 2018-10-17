@@ -74,7 +74,7 @@ def chooseAction(body):
 
 def checkEmeny(body):
     for enemy in body["enemies"]:
-        if len(body["enemies"]>1):
+        if len(body["enemies"]) > 1:
             return True
         return False
 
