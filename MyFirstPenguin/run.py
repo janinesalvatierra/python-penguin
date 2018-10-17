@@ -67,10 +67,10 @@ def moveTowardsBottomLeft(body):
 
 
 def chooseAction(body):
-    action = "pass"
-    action = checkEnemy(body)
-    if checkEmeny(body):
-        action = "shoot"
+    #action = "pass"
+    #action = checkEnemy(body)
+    #if checkEmeny(body):
+    #    action = "shoot"
     action = moveTowardsCenterOfMap(body)
     return action
 
