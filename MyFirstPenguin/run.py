@@ -57,7 +57,7 @@ def moveTowardsPoint(body, pointX, pointY):
 
 def moveTowardsCenterOfMap(body):
     centerPointX = math.floor(body["mapWidth"] / 2)
-    centerPointY = math.floor(body["mapHeight"] / 2)
+    centerPointY = math.floor((body["mapHeight"] / 2)-1)
     return moveTowardsPoint(body, centerPointX, centerPointY)
 
 def moveTowardsBottomLeft(body):
