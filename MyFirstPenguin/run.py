@@ -60,9 +60,15 @@ def moveTowardsCenterOfMap(body):
     centerPointY = math.floor(body["mapHeight"] / 2)
     return moveTowardsPoint(body, centerPointX, centerPointY)
 
+def moveTowardsBottomLeft(body):
+    pointXzero = math.floor(0)
+    edgeOfy = math.floor(body["mapHeight"])
+    return moveTowardsPoint(body, pointXzero, edgeOfy)
+
+
 def chooseAction(body):
     action = PASS
-    action = moveTowardsCenterOfMap(body)
+    action = moveTowardsBottomLeft(body)
     return action
 
 env = os.environ
@@ -72,7 +78,7 @@ responseBody = open(env['res'], 'w')
 response = {}
 returnObject = {}
 if req_params_query == "info":
-    returnObject["name"] = "JaninE"
+    returnObject["name"] = "Janine"
     returnObject["team"] = "Team Python"
 elif req_params_query == "command":
     body = json.loads(open(env["req"], "r").read())
