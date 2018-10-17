@@ -68,6 +68,7 @@ def moveTowardsBottomLeft(body):
 
 def chooseAction(body):
     action = moveTowardsBottomLeft(body)
+    action = moveTowardsPoint(body, 10, 10)
     if checkEmeny(body):
         action = SHOOT
     return action
