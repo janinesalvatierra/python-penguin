@@ -68,8 +68,10 @@ def moveTowardsBottomLeft(body):
 
 def chooseAction(body):
     action = moveTowardsBottomLeft(body)
-    if len(body["enemies"]) > 1:
-        action = SHOOT
+
+    for enemy in body["enemies"]:
+        if "x" in enemy.keys():
+            action = SHOOT
     return action
 
 
